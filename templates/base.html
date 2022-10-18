@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{tituloPag}}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <!--<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">-->
+
+    <script src="{% static 'js/jQuery362.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-12 col-lg-6 offset-lg-3" id="contenedor">
+            <!--ENCABEZADO  -->
+            {% include 'includes/header.html' %}
+            <!--FIN ENCABEZADO  -->
+            <!--MENU  NAVEGACION  -->
+            {% include 'includes/menu.html' %}
+            <!--FIN MENU  NAVEGACION  -->
+            <main>
+                <!-- BLOQUE PRINCIPAL -->
+                {% block content %}
+
+                {% endblock %}
+                <!-- FIN BLOQUE PRINCIPAL -->
+                <!-- PIE DE PÁGINA -->
+                {% include 'includes/footer.html' %}
+                <!-- FIN PIE DE PÁGINA -->
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+:root {
+    --fondo1: beige;
+    --fondo2:white;
+    --fondo3: SeaGreen;
+    --color-text1: rgb(28, 97, 91);
+    --color-text2: rgb(253, 105, 15);    
+    --color-Select:DarkGreen;
+    --boton1: Teal;
+    --boton2: SlateGray;
+    --boton3: Goldenrod;
+}
+
+body{ 
+    background-color: var(--fondo1); 
+    color: var(--color-text1);}
+
+#contenedor{ 
+    background-color: var(--fondo2);
+    padding: 3%;
+}
+
+#encabezado{
+    /*background-image: url('../img/agricolas.jpeg');
+    background-repeat: no-repeat;*/
+    background-color: rgb(247, 247, 247);
+    background-size: cover;
+    color: var(--color-text2);
+    margin: 0;
+    font-family: '../fonts/Roboto', sans-serif;
+}
+
+#encabezado img{
+    width: 100%;
+    /*margin: 2%;*/
+}
+
+#titulo, #saludo{
+    text-align: center;
+    color: var(--color-text1);
+    margin-top: 5%;
+}
+
+#titulo > h1{
+    font-size: 2.6em;
+
+}
+
+/********* BOTONES Y ENLACES *****************/
+.bg-light {
+    background-color: #cbced1!important;
+}
+
+.nav-link, a, #tituloPie, .dropdown-item{
+    color: var(--color-text1);
+}
+
+a:hover{color: var(--color-Select);}
+
+.boton1{
+    background-color: var(--boton1);
+    color: var(--fondo2);
+}
+.boton1:hover{
+    background-color: var(--boton2);
+    color: var(--fondo2);
+}
+
+.btn-carrito{
+    width: 100%;
+    padding: 3px;
+    margin-top: 2px;
+}
+

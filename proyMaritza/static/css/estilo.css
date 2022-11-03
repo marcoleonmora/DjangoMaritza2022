@@ -2,7 +2,7 @@
     --fondo1: beige;
     --fondo2:white;
     --fondo3: SeaGreen;
-    --color-text1: rgb(28, 97, 91);
+    --color-text1: rgb(31, 132, 123);
     --color-text2: rgb(253, 105, 15);    
     --color-Select:DarkGreen;
     --boton1: Teal;
@@ -20,8 +20,6 @@ body{
 }
 
 #encabezado{
-    /*background-image: url('../img/agricolas.jpeg');
-    background-repeat: no-repeat;*/
     background-color: rgb(247, 247, 247);
     background-size: cover;
     color: var(--color-text2);
@@ -65,9 +63,13 @@ a:hover{color: var(--color-Select);}
     color: var(--fondo2);
 }
 
-.btn-carrito{
+.btn-carrito, .btn-ver{
     width: 100%;
     padding: 3px;
     margin-top: 2px;
+}
+
+.card-body > h6{
+    height: 50px;
 }
 

@@ -1,10 +1,22 @@
+from asyncio.windows_events import NULL
 from django.shortcuts import render
 from .models import *
 
 # Create your views here.
+def listarCategorias(request):
+    listaCateg = Categoria.objects.all()
+    #crear context
+    context = {
+        'titulo': 'Lista de Categorias',
+        'categorias': listaCateg,
+    }
+    #renderizar
+    return render(request, 'categorias.html', context)
+
+
 def listarProductos(request):
     #consultar los productos
-    listaProductos = Producto.objects.all().values('nombreProd', 'icono')
+    listaProductos = Producto.objects.all()
     #crear el context
     context = {
         'tituloPag': 'Productos',
@@ -12,4 +24,18 @@ def listarProductos(request):
         'productos':  listaProductos,      
     }
     #renderizar
+
     return render(request, 'listaProductos.html', context)
+
+#*******************************************************************
+def verProducto(request, idProd):
+    #Consultar producto en BD
+    regProducto = Producto.objects.get(id=idProd)
+
+    #crear context
+    context = {
+        'titulo': 'Detalle del Producto',
+        'producto': regProducto,
+    }
+    #renderizar
+    return render(request, 'producto.html', context)

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+<!-- BLOQUE PRINCIPAL -->
+{% block content %}
+<br>
+<h2 style="text-align: center;">{{titulo}}</h2>
+ 
+    <div class="row">
+        <table class="table  table-striped">
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cat in categorias %}
+                <tr>
+                    <td>{{cat.nombreCat}}</td> 
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+    {% endblock %}
+
+    <!-- FIN BLOQUE PRINCIPAL -->

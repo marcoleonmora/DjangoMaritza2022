@@ -4,16 +4,15 @@
 {% block content %}
 <br>
 <h2 style="text-align: center;">{{tituloPlantilla}}</h2>
-    <hr>
+ 
     <div class="row">
         {% for prod in productos %}
-    
         <div class="card col-3">
-            <img src="media/{{prod.icono}}" class="card-img-top" alt="...">
+            <img src="{{ prod.icono.url }}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">{{ prod.nombreProd}}</h5>
+                <h6>{{ prod.nombreProd}}</h6>
                 
-                <a href="#" class="btn btn-primary">Ver</a>
+                <a href="{% url 'unproducto' prod.id %}" class="btn btn-primary btn-ver">Ver</a>
             </div>
         </div>
         {% endfor %}

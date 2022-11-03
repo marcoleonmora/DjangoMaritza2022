@@ -10,12 +10,16 @@
             <thead>
                 <tr>
                     <th>Categoria</th>
+                    <th>Cantidad</th>
+                    <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody>  {'categoria__pk': 1, 'categoria__nombreCat': 'Alimentos', 'cantidad': 26},
                 {% for cat in categorias %}
                 <tr>
-                    <td>{{cat.nombreCat}}</td> 
+                    <td>{{cat.categoria__nombreCat}}</td>
+                    <td>{{cat.cantidad}}</td>
+                    <td><a class="btn btn-primary" href="{% url 'productos_categ' cat.categoria__pk %}">Ver productos</a></td> 
                 </tr>
                 {% endfor %}
             </tbody>

@@ -9,8 +9,7 @@ urlpatterns = [
     path('categorias/', views.listarCategorias, name='categorias'),
     path('productos_categ/<int:idCateg>', views.listarProductosCategoria, name='productos_categ'),
     path('login/', views.login, name='login'),
-
-    
+    path('logout/', views.logout, name='logout'),
 
 ]
 

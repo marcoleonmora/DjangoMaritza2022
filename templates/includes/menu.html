@@ -11,10 +11,12 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
                 </li>
+                {% if user.id is None %}
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
                 </li>
 
+                {% else %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -35,6 +37,12 @@
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Salir</a>
+                </li>
+
+                {% endif %}
 
             </ul>
             <form class="d-flex" role="search">

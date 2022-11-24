@@ -26,7 +26,20 @@
             <!--MENU  NAVEGACION  -->
             {% include 'includes/menu.html' %}
             <!--FIN MENU  NAVEGACION  -->
+            {% if alarma %}
+            <br>
+            <div class="alert alert-danger">
+                <p>{{ alarma }}</p>
+            </div>
+            {% endif %}
+            {% if mensaje %}
+            <div class="alert mensaje">
+                <p>{{ mensaje }}</p>
+            </div>
+            {% endif %}
             <main>
+
+
                 <!-- BLOQUE PRINCIPAL -->
                 {% block content %}
 

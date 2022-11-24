@@ -1,7 +1,11 @@
 from asyncio.windows_events import NULL
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.db.models import Count
 from .models import *
+
+from django.contrib import auth
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 def listarCategorias(request):
@@ -14,8 +18,6 @@ def listarCategorias(request):
         'categorias': listaCateg,
     }
     #renderizar
-    print('----------------')
-    print(context)
     return render(request, 'categorias.html', context)
 
 
@@ -59,3 +61,28 @@ def verProducto(request, idProd):
     }
     #renderizar
     return render(request, 'producto.html', context)
+
+
+#******** CONTROL DE INGRESO DE USUARIOS  ***********************************************************
+def login(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+        print('---------------')
+        print(email, '--', password)
+        user = auth.authenticate(username= email, password = password)
+
+        if user is not None:
+            auth.login(request, user)
+            return render(request, 'home.html')
+        else:
+            return render(request, 'login.html', {'alarma': 'Correo o password no valido!'})
+
+    else:
+        return render(request, 'login.html')    
+
+#********* DESACTIVACION DEL USUARIO **********************************************************
+@login_required(login_url='login')
+def logout(request):
+    auth.logout(request)
+    return redirect('login')

@@ -23,10 +23,10 @@
             <!--ENCABEZADO  -->
             {% include 'includes/header.html' %}
             <!--FIN ENCABEZADO  -->
-            
+
             {% if user.id is not None %}
             <div class="mb-3 descripcion">
-                <h4>{{ user.username}}</h4>
+                <h5>{{ user.username}}</h5>
             </div>
             {% endif %}
 

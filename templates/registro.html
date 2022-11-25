@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- BLOQUE PRINCIPAL -->
+<div class="py-5 text-center">
+    <h2>Registrarse</h2>
+</div>
+
+<div class="col-12">
+    <form action="{% url 'registro' %}" method="POST">
+        {% csrf_token %}
+        <div class="row g-3">
+            <div class="col-12">
+                <label for="nombres" class="form-label">Nombres</label>
+                <input type="text" class="form-control" name="first_name" id="nombres" placeholder="" value="" required="">
+            </div>
+            <div class="col-12">
+                <label for="nombres" class="form-label">Apellidos</label>
+                <input type="text" class="form-control" name="last_name" id="nombres" placeholder="" value="" required="">
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="correo@ejemplo.com">
+            </div>
+
+            <div class="col-12">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="">
+            </div>
+
+            <div class="col-12">
+                <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+                <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="">
+
+            </div>
+        </div>
+        <hr class="my-4">
+        <button class="w-100 btn boton1 btn-lg" type="submit">Guardar datos</button>
+    </form>
+</div>
+<!-- FIN BLOQUE PRINCIPAL -->
+{% endblock %}

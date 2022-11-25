@@ -10,6 +10,7 @@ urlpatterns = [
     path('productos_categ/<int:idCateg>', views.listarProductosCategoria, name='productos_categ'),
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
+    path('registro/', views.registrar, name='registro'),
 
 ]
 
